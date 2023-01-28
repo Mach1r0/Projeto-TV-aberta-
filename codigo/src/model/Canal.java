@@ -3,50 +3,32 @@ package model;
 // classe 
 
 public class Canal {
-	private String programa;
+	private String nome;
 	private String horario;
 	private String dia;
 // construtor 
 	
-	public Canal(String p, String i,  String d) {
-			programa = p;
-			horario = i;
-			dia = d;
+	public Canal(String n) {
+			nome  = n;
+		
 	}
 	
 // atributos 
 	
-	public Canal() {
-		
-	}
-
-	public String getPrograma() {
-		return programa;
-	}
-	public void setPrograma(String programa) {
-		this.programa = programa;
-	}
-	public String getHorario() {
-		return horario;
-	}
-	public void setHorario(String horario) {
-		this.horario = horario;
-	}
 	
-	public String getDia() {
-		return dia;
+
+	public String getNome() {
+		return nome;
 	}
-	public void setDia(String dia) {
-		this.dia = dia;
-	} 
-// tostring
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
 	@Override
 	public String toString() {
-		return "Programa: " + programa + ", Horario: " + horario +
-			   ", Dia: " + dia;
+		return "Nome Canal: " + nome;
 	}
 
-	public void cadastroCanal(Canal canal) {
+	public void cadastroCanal() {
 		
 	}
 }

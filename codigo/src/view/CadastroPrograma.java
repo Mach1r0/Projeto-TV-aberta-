@@ -132,9 +132,9 @@ public CadastroPrograma() {
 		                case 3:
 		                	repaint(); // redesenha o painel
 		                  	revalidate(); // atualiza o painel
-		                    JLabel duracao = new JLabel("Qual é o diretor:");
-		                    duracao.setBounds(40, 450, 200, 25);
-		                    add(duracao);
+		                    JLabel diretor = new JLabel("Qual é o diretor:");
+		                    diretor.setBounds(40, 450, 200, 25);
+		                    add(diretor);
 		                    JTextArea txtduracao = new JTextArea();
 		                    txtduracao.setBounds(135, 450, 200, 25);
 		                    add(txtduracao); 
@@ -178,7 +178,6 @@ public CadastroPrograma() {
 	
 
 	private void ExcluirCadastroPrograma(ActionEvent evt) {
-		// TODO Auto-generated method stub
 		
 	}
 	public static void main(String[] args) {

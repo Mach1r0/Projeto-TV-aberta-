@@ -9,14 +9,13 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class CadastroCanal extends JFrame implements ActionListener{
-    JLabel Canal = new JLabel("Nome canal:");
-    JTextField txtCanal = new JTextField();
+    JLabel nome = new JLabel("Nome canal:");
+    JTextField txtnome = new JTextField();
     JButton Cadastrar = new JButton("Cadastrar");
     JLabel Titulo = new JLabel("Cadastro Canal");
     JButton Cancelar = new JButton("Cancelar");
     JButton Excluir = new JButton("Excluir");
     JButton Consultar = new JButton("Consultar");
-    JTextField TextField = new JTextField();
     
 
     public CadastroCanal() {
@@ -30,13 +29,14 @@ public class CadastroCanal extends JFrame implements ActionListener{
         Titulo.setFont(new Font("Arial", Font.BOLD, 20));
         add(Titulo);
                               
-        Canal.setBounds(80, 80, 100, 25);
-        add(Canal);
+        nome.setBounds(80, 80, 100, 25);
+        add(nome);
 
-        txtCanal.setBounds(155, 80, 200, 25);
-        add(txtCanal);
+        txtnome.setBounds(155, 80, 200, 25);
+        add(txtnome);
 
         Cadastrar.setBounds(80, 120, 100, 25);
+        Cadastrar.addActionListener(this);
         add(Cadastrar);
         
         Excluir.setBounds(200, 120, 100, 25);
@@ -48,7 +48,7 @@ public class CadastroCanal extends JFrame implements ActionListener{
         
         Consultar.setBounds(440, 120, 100, 25);
         add(Consultar);
-        
+               
         
 
 
@@ -59,16 +59,18 @@ public class CadastroCanal extends JFrame implements ActionListener{
         new CadastroCanal();
     }
     public void cadastrarCanal(java.awt.event.ActionEvent e ) {
-    	String nome = TextField.getText();
+    	String nome = txtnome.getText();
+    	boolean sucesso = true;
+    	
  		try {	
- 			CanalController programacontrol = new CanalController();
-			sucesso = programacontrol.cadastrarDesenho(txtPrograma.getText(), genero, txtResumo.getText() , null);
-			if (sucesso == true) {
-				JOptionPane.showMessageDialog(null, "O cadastro foi realizado com sucesso!");
-				this.ExcluirCadastroPrograma(e);
+ 			CanalController canalcontrol = new CanalController(); 		
+ 			sucesso = canalcontrol.cadastroCanal(nome);
+ 			if (sucesso == true) {
+ 				JOptionPane.showMessageDialog(null,"O cadastro foi realizado com sucesso!." );
+ 				this.limparTelacadastro(e);
 				}
 			else {
-			JOptionPane.showMessageDialog(null,"Os campos não foram preenchidos corretamente." );
+			JOptionPane.showMessageDialog(null,"Os campos não foram preenchidos corretamente.");
 			}
 		}
 		
@@ -77,8 +79,15 @@ public class CadastroCanal extends JFrame implements ActionListener{
 		}
 	}
 	
+	private void limparTelacadastro(ActionEvent evt) {
+		
+	}
+
 	@Override
 	public void actionPerformed(ActionEvent e) {
-			
+			Object src = e.getSource();
+			if(src == Cadastrar) {
+				cadastrarCanal(e);
+			}
 	}
 }
