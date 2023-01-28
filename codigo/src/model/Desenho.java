@@ -1,5 +1,7 @@
 package model;
 
+import dao.DesenhoDAO;
+
 public class Desenho  extends Programa {
 //construtor
 		public Desenho(String n, String d, String r, String h, String ds, int a) {	
@@ -19,6 +21,9 @@ public class Desenho  extends Programa {
 
 		public void setIdademin(String idademin) {
 			this.idademin = idademin;
+		}
+		public void cadastroPrograma(Desenho desenho) throws Exception {
+			new DesenhoDAO().cadastrarPrograma(desenho);			
 		}
 		
 		@Override

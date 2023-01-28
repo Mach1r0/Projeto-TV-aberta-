@@ -2,7 +2,8 @@ package Controller;
 
 import model.Desenho;
 
-public class ProgramaController{
+
+public class DesenhoController{
 
 	public boolean cadastrarDesenho(String titulo, String genero, String resumo, Integer horario) {
     if(titulo != null && titulo.length() > 0 && genero != null && resumo != null && resumo.length() > 0 && horario != null ) {
@@ -11,5 +12,6 @@ public class ProgramaController{
         return true;
     }
     return false;
-}
+    }
+  
 }

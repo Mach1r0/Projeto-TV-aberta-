@@ -13,7 +13,7 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JSpinner;
 import javax.swing.JTextArea;
-import Controller.ProgramaController;
+import Controller.DesenhoController;
 
 public class CadastroPrograma extends JFrame implements ActionListener {
 JLabel Genero = new JLabel("Gênero:");
@@ -94,73 +94,72 @@ public CadastroPrograma() {
         Cadastrar.addActionListener(this);
                
         
-        combogenero.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				   int selection = combogenero.getSelectedIndex();
-					switch (selection) {
-		                case 0:
-		                    break;
-			                case 1:			          							                
-		                	revalidate(); // atualiza o painel
-		                	repaint(); 
-		                	
-		                	JLabel Quantidadeep  = new JLabel("Quantidade de episodeos:");
-		                    Quantidadeep.setBounds(80, 450, 200, 25);
-		                    add(Quantidadeep);
-		                    JTextArea txtquantidadeep = new JTextArea();
-		                    txtquantidadeep.setBounds(235, 450, 200, 25);
-		                    add(txtquantidadeep); 
-		                    setSize(580, 550);
-		                                
-		                    break;
-
-		                case 2:
-		                	revalidate(); // atualiza o painel
-		                	repaint(); // redesenha o painel
-		                    JLabel idademin = new JLabel("Idade minima:");
-		                    idademin.setBounds(100, 450, 200, 25);
-		                    add(idademin);
-		                    JTextArea txtidademin = new JTextArea();
-		                    txtidademin.setBounds(180, 450, 200, 25);
-		                    add(txtidademin); 
-		                    setSize(580, 550);
-		                   
-	                    
-		                    break;
-		                
-		                case 3:
-		                	repaint(); // redesenha o painel
-		                  	revalidate(); // atualiza o painel
-		                    JLabel diretor = new JLabel("Qual é o diretor:");
-		                    diretor.setBounds(40, 450, 200, 25);
-		                    add(diretor);
-		                    JTextArea txtduracao = new JTextArea();
-		                    txtduracao.setBounds(135, 450, 200, 25);
-		                    add(txtduracao); 
-		                    setSize(580, 550);
-		                    
-		                    break;
-		                default:
-		                    break;
-		            }				
-			}
-
-		
-        	
-        });
-
-        setVisible(true);
+           setVisible(true);
        
 
-    }
+    
+
+combogenero.addActionListener(new ActionListener() {
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			   int selection = combogenero.getSelectedIndex();
+				switch (selection) {
+	                case 0:
+	                    break;
+		                case 1:			          							                
+	                	revalidate(); // atualiza o painel
+	                	repaint(); 
+	                	
+	                	JLabel Quantidadeep  = new JLabel("Quantidade de episodeos:");
+	                    Quantidadeep.setBounds(80, 450, 200, 25);
+	                    add(Quantidadeep);
+	                    JTextArea txtquantidadeep = new JTextArea();
+	                    txtquantidadeep.setBounds(235, 450, 200, 25);
+	                    add(txtquantidadeep); 
+	                    setSize(580, 550);
+	                                
+	                    break;
+
+	                case 2:
+	                	revalidate(); // atualiza o painel
+	                	repaint(); 
+	                    JLabel idademin = new JLabel("Idade minima:");
+	                    idademin.setBounds(100, 450, 200, 25);
+	                    add(idademin);
+	                    JTextArea txtidademin = new JTextArea();
+	                    txtidademin.setBounds(180, 450, 200, 25);
+	                    add(txtidademin); 
+	                    setSize(580, 550);
+	                   	                    
+	                    break;
+	                
+	                case 3:
+	                	repaint(); // redesenha o painel
+	                  	revalidate(); // atualiza o painel
+	                    JLabel diretor = new JLabel("Qual é o diretor:");
+	                    diretor.setBounds(40, 450, 200, 25);
+	                    add(diretor);
+	                    JTextArea txtduracao = new JTextArea();
+	                    txtduracao.setBounds(135, 450, 200, 25);
+	                    add(txtduracao); 
+	                    setSize(580, 550);
+	                    
+	                    break;
+	                default:
+	                    break;
+	            }				
+		}
+
+	
+   	
+   });}
 	public void cadastrarPrograma(java.awt.event.ActionEvent e ) {
 		String horario = spinerDuracao.getValue().toString();
 		String genero = combogenero.getSelectedItem().toString();
 		boolean sucesso = false;	
 
 		try {	
-			ProgramaController programacontrol = new ProgramaController();
+			DesenhoController programacontrol = new DesenhoController();
 			sucesso = programacontrol.cadastrarDesenho(txtPrograma.getText(), genero, txtResumo.getText() , null);
 			if (sucesso == true) {
 				JOptionPane.showMessageDialog(null, "O cadastro foi realizado com sucesso!");
