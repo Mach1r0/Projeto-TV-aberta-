@@ -18,7 +18,7 @@
 #     to set the Java Heap base and to place the Java Heap above 4GB virtual address.
 # This output file may be truncated or incomplete.
 #
-#  Out of Memory Error (os_windows.cpp:3548), pid=6808, tid=224
+#  Out of Memory Error (os_windows.cpp:3548), pid=4212, tid=2160
 #
 # JRE version:  (17.0.5+8) (build )
 # Java VM: OpenJDK 64-Bit Server VM (17.0.5+8, mixed mode, sharing, tiered, compressed oops, compressed class ptrs, g1 gc, windows-amd64)
@@ -30,13 +30,13 @@
 Command Line: -Dfile.encoding=UTF-8 -XX:+ShowCodeDetailsInExceptionMessages view.CadastroPrograma
 
 Host: Intel(R) Core(TM) i5-3470 CPU @ 3.20GHz, 4 cores, 7G,  Windows 10 , 64 bit Build 19041 (10.0.19041.2364)
-Time: Thu Jan 26 21:08:44 2023 Hora oficial do Brasil elapsed time: 0.012635 seconds (0d 0h 0m 0s)
+Time: Fri Jan 27 23:00:24 2023 Hora oficial do Brasil elapsed time: 0.018706 seconds (0d 0h 0m 0s)
 
 ---------------  T H R E A D  ---------------
 
-Current thread (0x0000020e99e76d80):  JavaThread "Unknown thread" [_thread_in_vm, id=224, stack(0x0000004c02800000,0x0000004c02900000)]
+Current thread (0x000001aa455d7dc0):  JavaThread "Unknown thread" [_thread_in_vm, id=2160, stack(0x000000709ba00000,0x000000709bb00000)]
 
-Stack: [0x0000004c02800000,0x0000004c02900000]
+Stack: [0x000000709ba00000,0x000000709bb00000]
 Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
 V  [jvm.dll+0x676b3a]
 V  [jvm.dll+0x831444]
@@ -65,22 +65,22 @@ C  [ntdll.dll+0x526a1]
 ---------------  P R O C E S S  ---------------
 
 Threads class SMR info:
-_java_thread_list=0x00007ffbc46b2f18, length=0, elements={
+_java_thread_list=0x00007ffdc0e02f18, length=0, elements={
 }
 
 Java Threads: ( => current thread )
 
 Other Threads:
-  0x0000020e99ed1d80 GCTaskThread "GC Thread#0" [stack: 0x0000004c02900000,0x0000004c02a00000] [id=22128]
-  0x0000020e99ee3120 ConcurrentGCThread "G1 Main Marker" [stack: 0x0000004c02a00000,0x0000004c02b00000] [id=6860]
-  0x0000020e99ee4b40 ConcurrentGCThread "G1 Conc#0" [stack: 0x0000004c02b00000,0x0000004c02c00000] [id=22208]
+  0x000001aa45632dc0 GCTaskThread "GC Thread#0" [stack: 0x000000709bb00000,0x000000709bc00000] [id=12956]
+  0x000001aa45644160 ConcurrentGCThread "G1 Main Marker" [stack: 0x000000709bc00000,0x000000709bd00000] [id=16636]
+  0x000001aa45645b80 ConcurrentGCThread "G1 Conc#0" [stack: 0x000000709bd00000,0x000000709be00000] [id=16140]
 
-[error occurred during error reporting (printing all threads), id 0xc0000005, EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x00007ffbc3e8b617]
+[error occurred during error reporting (printing all threads), id 0xc0000005, EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x00007ffdc05db617]
 
 VM state: not at safepoint (not fully initialized)
 
 VM Mutex/Monitor currently owned by a thread:  ([mutex/lock_event])
-[0x0000020e99e73b20] Heap_lock - owner thread: 0x0000020e99e76d80
+[0x000001aa455d45d0] Heap_lock - owner thread: 0x000001aa455d7dc0
 
 Heap address: 0x0000000081a00000, size: 2022 MB, Compressed Oops mode: 32-bit
 
@@ -94,13 +94,13 @@ Heap:
  garbage-first heap   total 0K, used 0K [0x0000000081a00000, 0x0000000100000000)
   region size 1024K, 0 young (0K), 0 survivors (0K)
 
-[error occurred during error reporting (printing heap information), id 0xc0000005, EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x00007ffbc426fcb9]
+[error occurred during error reporting (printing heap information), id 0xc0000005, EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x00007ffdc09bfcb9]
 
 GC Heap History (0 events):
 No events
 
 Dll operation events (1 events):
-Event: 0.008 Loaded shared library C:\Users\Daniel ferreira\.p2\pool\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_17.0.5.v20221102-0933\jre\bin\java.dll
+Event: 0.010 Loaded shared library C:\Users\Daniel ferreira\.p2\pool\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_17.0.5.v20221102-0933\jre\bin\java.dll
 
 Deoptimization events (0 events):
 No events
@@ -122,37 +122,37 @@ No events
 
 
 Dynamic libraries:
-0x00007ff64ee50000 - 0x00007ff64ee5e000 	C:\Users\Daniel ferreira\.p2\pool\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_17.0.5.v20221102-0933\jre\bin\javaw.exe
-0x00007ffbed870000 - 0x00007ffbeda68000 	C:\Windows\SYSTEM32\ntdll.dll
-0x00007ffbecd60000 - 0x00007ffbece1f000 	C:\Windows\System32\KERNEL32.DLL
-0x00007ffbeb250000 - 0x00007ffbeb522000 	C:\Windows\System32\KERNELBASE.dll
-0x00007ffbeb0a0000 - 0x00007ffbeb1a0000 	C:\Windows\System32\ucrtbase.dll
-0x00007ffbe87b0000 - 0x00007ffbe87c7000 	C:\Users\Daniel ferreira\.p2\pool\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_17.0.5.v20221102-0933\jre\bin\jli.dll
-0x00007ffbeb8f0000 - 0x00007ffbeba91000 	C:\Windows\System32\USER32.dll
-0x00007ffbeb6b0000 - 0x00007ffbeb6d2000 	C:\Windows\System32\win32u.dll
-0x00007ffbecf50000 - 0x00007ffbecf7b000 	C:\Windows\System32\GDI32.dll
-0x00007ffbeaf90000 - 0x00007ffbeb09f000 	C:\Windows\System32\gdi32full.dll
-0x00007ffbeb580000 - 0x00007ffbeb61d000 	C:\Windows\System32\msvcp_win.dll
-0x00007ffbd9ee0000 - 0x00007ffbd9ef9000 	C:\Users\Daniel ferreira\.p2\pool\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_17.0.5.v20221102-0933\jre\bin\VCRUNTIME140.dll
-0x00007ffbd9020000 - 0x00007ffbd92ba000 	C:\Windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.19041.1110_none_60b5254171f9507e\COMCTL32.dll
-0x00007ffbeccc0000 - 0x00007ffbecd5e000 	C:\Windows\System32\msvcrt.dll
-0x00007ffbeb8b0000 - 0x00007ffbeb8e2000 	C:\Windows\System32\IMM32.DLL
-0x00007ffbdef80000 - 0x00007ffbdef8c000 	C:\Users\Daniel ferreira\.p2\pool\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_17.0.5.v20221102-0933\jre\bin\vcruntime140_1.dll
-0x00007ffbc8a20000 - 0x00007ffbc8ab1000 	C:\Users\Daniel ferreira\.p2\pool\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_17.0.5.v20221102-0933\jre\bin\msvcp140.dll
-0x00007ffbc3ba0000 - 0x00007ffbc47e4000 	C:\Users\Daniel ferreira\.p2\pool\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_17.0.5.v20221102-0933\jre\bin\server\jvm.dll
-0x00007ffbec5f0000 - 0x00007ffbec69e000 	C:\Windows\System32\ADVAPI32.dll
-0x00007ffbebd30000 - 0x00007ffbebdcc000 	C:\Windows\System32\sechost.dll
-0x00007ffbece20000 - 0x00007ffbecf45000 	C:\Windows\System32\RPCRT4.dll
-0x00007ffbdf970000 - 0x00007ffbdf979000 	C:\Windows\SYSTEM32\WSOCK32.dll
-0x00007ffbe09d0000 - 0x00007ffbe09da000 	C:\Windows\SYSTEM32\VERSION.dll
-0x00007ffbec830000 - 0x00007ffbec89b000 	C:\Windows\System32\WS2_32.dll
-0x00007ffbdc0b0000 - 0x00007ffbdc0d7000 	C:\Windows\SYSTEM32\WINMM.dll
-0x00007ffbe8e40000 - 0x00007ffbe8e52000 	C:\Windows\SYSTEM32\kernel.appcore.dll
-0x00007ffbda4d0000 - 0x00007ffbda4da000 	C:\Users\Daniel ferreira\.p2\pool\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_17.0.5.v20221102-0933\jre\bin\jimage.dll
-0x00007ffbde520000 - 0x00007ffbde704000 	C:\Windows\SYSTEM32\DBGHELP.DLL
-0x00007ffbde4e0000 - 0x00007ffbde515000 	C:\Windows\SYSTEM32\dbgcore.DLL
-0x00007ffbeb620000 - 0x00007ffbeb6a2000 	C:\Windows\System32\bcryptPrimitives.dll
-0x00007ffbd16e0000 - 0x00007ffbd1705000 	C:\Users\Daniel ferreira\.p2\pool\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_17.0.5.v20221102-0933\jre\bin\java.dll
+0x00007ff7f7dd0000 - 0x00007ff7f7dde000 	C:\Users\Daniel ferreira\.p2\pool\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_17.0.5.v20221102-0933\jre\bin\javaw.exe
+0x00007ffde6550000 - 0x00007ffde6748000 	C:\Windows\SYSTEM32\ntdll.dll
+0x00007ffde55a0000 - 0x00007ffde565f000 	C:\Windows\System32\KERNEL32.DLL
+0x00007ffde4080000 - 0x00007ffde4352000 	C:\Windows\System32\KERNELBASE.dll
+0x00007ffde3f80000 - 0x00007ffde4080000 	C:\Windows\System32\ucrtbase.dll
+0x00007ffdc8160000 - 0x00007ffdc8177000 	C:\Users\Daniel ferreira\.p2\pool\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_17.0.5.v20221102-0933\jre\bin\jli.dll
+0x00007ffde53b0000 - 0x00007ffde5551000 	C:\Windows\System32\USER32.dll
+0x00007ffde4560000 - 0x00007ffde4582000 	C:\Windows\System32\win32u.dll
+0x00007ffde6140000 - 0x00007ffde616b000 	C:\Windows\System32\GDI32.dll
+0x00007ffde3e70000 - 0x00007ffde3f7f000 	C:\Windows\System32\gdi32full.dll
+0x00007ffde3dd0000 - 0x00007ffde3e6d000 	C:\Windows\System32\msvcp_win.dll
+0x00007ffdc7cb0000 - 0x00007ffdc7cc9000 	C:\Users\Daniel ferreira\.p2\pool\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_17.0.5.v20221102-0933\jre\bin\VCRUNTIME140.dll
+0x00007ffdd2eb0000 - 0x00007ffdd314a000 	C:\Windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.19041.1110_none_60b5254171f9507e\COMCTL32.dll
+0x00007ffde6340000 - 0x00007ffde63de000 	C:\Windows\System32\msvcrt.dll
+0x00007ffde5560000 - 0x00007ffde5592000 	C:\Windows\System32\IMM32.DLL
+0x00007ffddf7d0000 - 0x00007ffddf7dc000 	C:\Users\Daniel ferreira\.p2\pool\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_17.0.5.v20221102-0933\jre\bin\vcruntime140_1.dll
+0x00007ffdbe750000 - 0x00007ffdbe7e1000 	C:\Users\Daniel ferreira\.p2\pool\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_17.0.5.v20221102-0933\jre\bin\msvcp140.dll
+0x00007ffdc02f0000 - 0x00007ffdc0f34000 	C:\Users\Daniel ferreira\.p2\pool\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_17.0.5.v20221102-0933\jre\bin\server\jvm.dll
+0x00007ffde6080000 - 0x00007ffde612e000 	C:\Windows\System32\ADVAPI32.dll
+0x00007ffde49d0000 - 0x00007ffde4a6c000 	C:\Windows\System32\sechost.dll
+0x00007ffde63e0000 - 0x00007ffde6505000 	C:\Windows\System32\RPCRT4.dll
+0x00007ffddf900000 - 0x00007ffddf909000 	C:\Windows\SYSTEM32\WSOCK32.dll
+0x00007ffddaa30000 - 0x00007ffddaa57000 	C:\Windows\SYSTEM32\WINMM.dll
+0x00007ffde5200000 - 0x00007ffde526b000 	C:\Windows\System32\WS2_32.dll
+0x00007ffdd84b0000 - 0x00007ffdd84ba000 	C:\Windows\SYSTEM32\VERSION.dll
+0x00007ffde1a40000 - 0x00007ffde1a52000 	C:\Windows\SYSTEM32\kernel.appcore.dll
+0x00007ffddf7b0000 - 0x00007ffddf7ba000 	C:\Users\Daniel ferreira\.p2\pool\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_17.0.5.v20221102-0933\jre\bin\jimage.dll
+0x00007ffdd5680000 - 0x00007ffdd5864000 	C:\Windows\SYSTEM32\DBGHELP.DLL
+0x00007ffdd5340000 - 0x00007ffdd5375000 	C:\Windows\SYSTEM32\dbgcore.DLL
+0x00007ffde3d40000 - 0x00007ffde3dc2000 	C:\Windows\System32\bcryptPrimitives.dll
+0x00007ffddb760000 - 0x00007ffddb785000 	C:\Users\Daniel ferreira\.p2\pool\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_17.0.5.v20221102-0933\jre\bin\java.dll
 
 dbghelp: loaded successfully - version: 4.0.5 - missing functions: none
 symbol engine: initialized successfully - sym options: 0x614 - pdb path: .;C:\Users\Daniel ferreira\.p2\pool\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_17.0.5.v20221102-0933\jre\bin;C:\Windows\SYSTEM32;C:\Windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.19041.1110_none_60b5254171f9507e;C:\Users\Daniel ferreira\.p2\pool\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_17.0.5.v20221102-0933\jre\bin\server
@@ -160,7 +160,7 @@ symbol engine: initialized successfully - sym options: 0x614 - pdb path: .;C:\Us
 VM Arguments:
 jvm_args: -Dfile.encoding=UTF-8 -XX:+ShowCodeDetailsInExceptionMessages 
 java_command: view.CadastroPrograma
-java_class_path (initial): C:\Users\Daniel ferreira\eclipse-workspace\text\bin
+java_class_path (initial): C:\Users\Daniel ferreira\eclipse-workspace\Projeto-OO-tvaberta\codigo\bin
 Launcher Type: SUN_STANDARD
 
 [Global flags]
@@ -192,7 +192,7 @@ Log output configuration:
  #1: stderr all=off uptime,level,tags
 
 Environment Variables:
-PATH=C:/Users/Daniel ferreira/.p2/pool/plugins/org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_17.0.5.v20221102-0933/jre/bin/server;C:/Users/Daniel ferreira/.p2/pool/plugins/org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_17.0.5.v20221102-0933/jre/bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\Git\cmd;C:\Users\Daniel ferreira\AppData\Local\Microsoft\WindowsApps;;C:\Windows\system32;
+PATH=C:/Users/Daniel ferreira/.p2/pool/plugins/org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_17.0.5.v20221102-0933/jre/bin/server;C:/Users/Daniel ferreira/.p2/pool/plugins/org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_17.0.5.v20221102-0933/jre/bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\Git\cmd;C:\Users\Daniel ferreira\AppData\Local\Microsoft\WindowsApps;C:\Users\Daniel ferreira\Desktop;
 USERNAME=Daniel ferreira
 OS=Windows_NT
 PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 58 Stepping 9, GenuineIntel
@@ -205,12 +205,12 @@ TEMP=C:\Users\DANIEL~1\AppData\Local\Temp
 
 OS:
  Windows 10 , 64 bit Build 19041 (10.0.19041.2364)
-OS uptime: 0 days 8:24 hours
+OS uptime: 1 days 1:44 hours
 
 CPU: total 4 (initial active 4) (4 cores per cpu, 1 threads per core) family 6 model 58 stepping 9 microcode 0x21, cx8, cmov, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, tsc, tscinvbit, avx, aes, erms, clmul, vzeroupper, clflush
 
-Memory: 4k page, system-wide physical 8087M (1876M free)
-TotalPageFile size 22317M (AvailPageFile size 58M)
+Memory: 4k page, system-wide physical 8087M (1382M free)
+TotalPageFile size 22317M (AvailPageFile size 126M)
 current process WorkingSet (physical memory assigned to process): 10M, peak: 10M
 current process commit charge ("private bytes"): 51M, peak: 179M
 

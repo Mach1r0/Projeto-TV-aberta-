@@ -1,6 +1,9 @@
 package view;
 
 import javax.swing.*;
+
+import Controller.CanalController;
+
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -13,8 +16,11 @@ public class CadastroCanal extends JFrame implements ActionListener{
     JButton Cancelar = new JButton("Cancelar");
     JButton Excluir = new JButton("Excluir");
     JButton Consultar = new JButton("Consultar");
+    JTextField TextField = new JTextField();
+    
 
     public CadastroCanal() {
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
         setSize(600, 300);
         setLayout(null);
         setLocationRelativeTo(null);
@@ -52,22 +58,27 @@ public class CadastroCanal extends JFrame implements ActionListener{
     public static void main(String[] args) {
         new CadastroCanal();
     }
-
+    public void cadastrarCanal(java.awt.event.ActionEvent e ) {
+    	String nome = TextField.getText();
+ 		try {	
+ 			CanalController programacontrol = new CanalController();
+			sucesso = programacontrol.cadastrarDesenho(txtPrograma.getText(), genero, txtResumo.getText() , null);
+			if (sucesso == true) {
+				JOptionPane.showMessageDialog(null, "O cadastro foi realizado com sucesso!");
+				this.ExcluirCadastroPrograma(e);
+				}
+			else {
+			JOptionPane.showMessageDialog(null,"Os campos não foram preenchidos corretamente." );
+			}
+		}
+		
+		catch(Exception ex) {
+			JOptionPane.showMessageDialog(null, "Erro:" + ex);
+		}
+	}
+	
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		dropbox.addActionListener(new ActionListener() {
-		    public void actionPerformed(ActionEvent e) {
-		        JComboBox cb = (JComboBox)e.getSource();
-		        String opcaoSelecionada = (String)cb.getSelectedItem();
-		        if (opcaoSelecionada.equals("Série")) {
-		            JTextArea txtSinopse = new JTextArea();
-		            txtSinopse.setBounds(180, 400, 300, 120);
-		            add(txtSinopse);
-		            txtSinopse.setVisible(true);
-		        }
-		    }
-		});
-
-		
+			
 	}
 }
