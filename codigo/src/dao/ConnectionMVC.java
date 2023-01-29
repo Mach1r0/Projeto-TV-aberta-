@@ -9,12 +9,11 @@ public class ConnectionMVC {
 		Connection conn = null;
 		
 		try {
-			Class.forName("com.mysql.cj.jdbc.Driver");
+			Class.forName("com.mysql.jdbc.Driver");
 		} catch(ClassNotFoundException e) {
 			e.printStackTrace();
 		}
-		
-		try {
+	try {
 			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/MVC?useSSL=false", "root", "DAni2003#");
 		} catch(SQLException e) {
 			e.printStackTrace();

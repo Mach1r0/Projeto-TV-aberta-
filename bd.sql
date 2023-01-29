@@ -1,6 +1,6 @@
-drop database if exists MVC;
-create database if not exists MVC;
-use MVC;
+drop database if exists mvc;
+create database if not exists mvc;
+use mvc;
 
 create table Serie (
 codSerie int auto_increment not null,
