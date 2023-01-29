@@ -1,11 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
+<<<<<<< HEAD
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-17">
+=======
+	<classpathentry kind="src" path="code - Copia/src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER">
+>>>>>>> b1b6fc8eac09b0a74e646210dd35e4e260323b0a
 		<attributes>
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
+<<<<<<< HEAD
 	<classpathentry kind="lib" path="C:/Users/Caio Alves Braga/Downloads/mysql-connector-j-8.0.31.jar"/>
 	<classpathentry kind="output" path="bin"/>
+=======
+	<classpathentry kind="lib" path="C:/Users/Daniel ferreira/Desktop/mysql-connector-j-8.0.31.jar"/>
+	<classpathentry kind="output" path="code - Copia/bin"/>
+>>>>>>> b1b6fc8eac09b0a74e646210dd35e4e260323b0a
 </classpath>
