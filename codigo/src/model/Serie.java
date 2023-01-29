@@ -3,12 +3,11 @@ package model;
 
 public class Serie extends Programa {
 
-	public Serie(String n, String d, String r, String h, int a, String qp) {
+	public Serie(String n, String d, String r, String h, String qp) {
 		this.titulo = n;
 		this.duracao = d;
 		this.resumo = r; 
 		this.horario = h;
-		this.ano = a;
 		this.quantidadep = qp;
 	}
 

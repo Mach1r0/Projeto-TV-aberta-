@@ -14,6 +14,8 @@ import javax.swing.JOptionPane;
 import javax.swing.JSpinner;
 import javax.swing.JTextArea;
 import Controller.DesenhoController;
+import Controller.FilmeController;
+import Controller.SerieController;
 
 public class CadastroPrograma extends JFrame implements ActionListener {
 JLabel Genero = new JLabel("Gênero:");
@@ -26,15 +28,23 @@ JTextArea txtResumo = new JTextArea();
 JButton Cancelar = new JButton("Cancelar");
 JButton Excluir = new JButton("Excluir");
 JButton Consultar = new JButton("Consultar");
-JLabel horario = new JLabel("Horario:");
+JLabel lhorario = new JLabel("Horario:");
 JLabel canal = new JLabel("");
 JSpinner spinerDuracao = new JSpinner();
 String[] genero = {"Selecione um gênero", "Série", "Desenho", "Filme"};
 JComboBox combogenero = new JComboBox(genero);
+JTextArea txtquantidadeep = new JTextArea();
+JLabel Quantidadeep  = new JLabel("Quantidade de episodeos:");
+JLabel diretor = new JLabel("Qual é o diretor:");
+JLabel idademin = new JLabel("Idade minima:");
+JTextArea txtidademin = new JTextArea();
+JTextArea txtdiretor = new JTextArea();
+DesenhoController programacontrol = new DesenhoController();
+FilmeController filmecontroller = new FilmeController();
+SerieController seriecontroller = new SerieController();
 
-
-
-
+String[] horario = {"Selecione um horario", "00:00 - 07:00", "07:00 - 12:00", "12:00 - 18:00","18:00 - 21:00", "21:00 - 00:00" };
+JComboBox selecionarhorario = new JComboBox(horario);
 
 
 public CadastroPrograma() {
@@ -51,11 +61,9 @@ public CadastroPrograma() {
     Genero.setBounds(125, 110, 200, 25);
     add(Genero);
     
-    horario.setBounds(125, 140, 200, 25);
-    add(horario);
-        
-        String[] horario = {"Selecione um horario", "00:00 - 07:00", "07:00 - 12:00", "12:00 - 18:00","18:00 - 21:00", "21:00 - 00:00" };
-        JComboBox selecionarhorario = new JComboBox(horario);
+    lhorario.setBounds(125, 140, 200, 25);
+    add(lhorario);
+    
         combogenero.setBounds(180, 110, 200, 25);
     	JTextArea txtserie = new JTextArea();
     	add(combogenero);
@@ -106,27 +114,23 @@ combogenero.addActionListener(new ActionListener() {
 				switch (selection) {
 	                case 0:
 	                    break;
-		                case 1:			          							                
-	                	revalidate(); // atualiza o painel
+		                case 1:			          	
+		                revalidate(); // atualiza o painel
 	                	repaint(); 
 	                	
-	                	JLabel Quantidadeep  = new JLabel("Quantidade de episodeos:");
 	                    Quantidadeep.setBounds(80, 450, 200, 25);
 	                    add(Quantidadeep);
-	                    JTextArea txtquantidadeep = new JTextArea();
 	                    txtquantidadeep.setBounds(235, 450, 200, 25);
 	                    add(txtquantidadeep); 
 	                    setSize(580, 550);
-	                                
+	                               
 	                    break;
 
 	                case 2:
 	                	revalidate(); // atualiza o painel
 	                	repaint(); 
-	                    JLabel idademin = new JLabel("Idade minima:");
 	                    idademin.setBounds(100, 450, 200, 25);
 	                    add(idademin);
-	                    JTextArea txtidademin = new JTextArea();
 	                    txtidademin.setBounds(180, 450, 200, 25);
 	                    add(txtidademin); 
 	                    setSize(580, 550);
@@ -136,12 +140,10 @@ combogenero.addActionListener(new ActionListener() {
 	                case 3:
 	                	repaint(); // redesenha o painel
 	                  	revalidate(); // atualiza o painel
-	                    JLabel diretor = new JLabel("Qual é o diretor:");
 	                    diretor.setBounds(40, 450, 200, 25);
 	                    add(diretor);
-	                    JTextArea txtduracao = new JTextArea();
-	                    txtduracao.setBounds(135, 450, 200, 25);
-	                    add(txtduracao); 
+	                    txtdiretor.setBounds(135, 450, 200, 25);
+	                    add(txtdiretor); 
 	                    setSize(580, 550);
 	                    
 	                    break;
@@ -150,17 +152,14 @@ combogenero.addActionListener(new ActionListener() {
 	            }				
 		}
 
-	
-   	
    });}
 	public void cadastrarPrograma(java.awt.event.ActionEvent e ) {
 		String horario = spinerDuracao.getValue().toString();
 		String genero = combogenero.getSelectedItem().toString();
 		boolean sucesso = false;	
-
+	if (genero == "Desenho"){
 		try {	
-			DesenhoController programacontrol = new DesenhoController();
-			sucesso = programacontrol.cadastrarDesenho(txtPrograma.getText(), genero, txtResumo.getText() , null);
+			sucesso = programacontrol.cadastrarDesenho(txtPrograma.getText(), genero, txtResumo.getText(), horario, txtidademin.getText());
 			if (sucesso == true) {
 				JOptionPane.showMessageDialog(null, "O cadastro foi realizado com sucesso!");
 				this.ExcluirCadastroPrograma(e);
@@ -174,6 +173,41 @@ combogenero.addActionListener(new ActionListener() {
 			JOptionPane.showMessageDialog(null, "Erro:" + ex);
 		}
 	}
+	if (genero == "Filme"){
+		try {	
+			sucesso = filmecontroller.cadastrarFilme(txtPrograma.getText(), genero, txtResumo.getText(), horario, txtdiretor.getText());
+			if (sucesso == true) {
+				JOptionPane.showMessageDialog(null, "O cadastro foi realizado com sucesso!");
+				this.ExcluirCadastroPrograma(e);
+				}
+			else {
+			JOptionPane.showMessageDialog(null,"Os campos não foram preenchidos corretamente." );
+			}
+		}
+		
+		catch(Exception ex) {
+			JOptionPane.showMessageDialog(null, "Erro:" + ex);
+		}
+	}
+	if (genero == "Série"){
+		try {	
+			sucesso = seriecontroller.cadastrarSerie(txtPrograma.getText(), genero, txtResumo.getText(), horario, txtquantidadeep.getText());
+			if (sucesso == true) {
+				JOptionPane.showMessageDialog(null, "O cadastro foi realizado com sucesso!");
+				this.ExcluirCadastroPrograma(e);
+				}
+			else {
+			JOptionPane.showMessageDialog(null,"Os campos não foram preenchidos corretamente." );
+			}
+		}
+		
+		catch(Exception ex) {
+			JOptionPane.showMessageDialog(null, "Erro:" + ex);
+		}
+	}
+	}
+	
+	
 	
 
 	private void ExcluirCadastroPrograma(ActionEvent evt) {
@@ -191,7 +225,5 @@ public void actionPerformed(ActionEvent e) {
 	if (e.getSource() == Cadastrar) {
 	    cadastrarPrograma(e);
 	}
-	
-	
 		}
 }

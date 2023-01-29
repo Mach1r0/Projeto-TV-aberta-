@@ -3,14 +3,12 @@ package model;
 public class Filme extends Programa {
 	private String diretor;
 
-	public  Filme(String n, String d, String r, String h, String ds, int a, String di) {	
-		this.titulo = n;
-		this.duracao = d;
+	public  Filme(String t, String d, String r, String h, String g) {	
+		this.titulo = t;
+		this.genero = g;
 		this.resumo = r; 
 		this.horario = h;
-		this.diasemana = ds; 
-		this.ano = a;
-		this.diretor = di;
+		this.diretor = d;
 	}
 
 	public String getDiretor() {

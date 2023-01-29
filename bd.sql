@@ -1,6 +1,6 @@
-drop database if exists mvc;
-create database if not exists mvc;
-use mvc;
+drop database if exists MVC;
+create database if not exists MVC;
+use MVC;
 
 create table Serie (
 codSerie int auto_increment not null,
@@ -31,5 +31,5 @@ primary key (codFilme));
 
 create table Canal (
 codCanal int auto_increment not null,
-nome varchar(20),
+nome varchar(40),
 primary key (codCanal));

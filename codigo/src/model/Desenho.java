@@ -1,16 +1,15 @@
 package model;
 
-import dao.DesenhoDAO;
+//import dao.DesenhoDAO;
 
 public class Desenho  extends Programa {
 //construtor
-		public Desenho(String n, String d, String r, String h, String ds, int a) {	
-			this.titulo = n;
-			this.duracao = d;
+		public Desenho(String t, String r, String id, String h, String g) {	
+			this.titulo = t;
+			this.genero = g;
 			this.resumo = r; 
 			this.horario = h;
-			this.diasemana = ds; 
-			this.ano = a;
+			this.idademin = id;
 		}	
 // atributos 		
 		private String idademin;
@@ -23,7 +22,7 @@ public class Desenho  extends Programa {
 			this.idademin = idademin;
 		}
 		public void cadastroPrograma(Desenho desenho) throws Exception {
-			new DesenhoDAO().cadastrarPrograma(desenho);			
+			//new DesenhoDAO().cadastrarPrograma(desenho);			
 		}
 		
 		@Override

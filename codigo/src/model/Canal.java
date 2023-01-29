@@ -1,5 +1,7 @@
 package model;
 
+import dao.CanalDAO;
+
 // classe 
 
 public class Canal {
@@ -10,7 +12,6 @@ public class Canal {
 	
 	public Canal(String n) {
 			nome  = n;
-		
 	}
 	
 // atributos 
@@ -28,7 +29,7 @@ public class Canal {
 		return "Nome Canal: " + nome;
 	}
 
-	public void cadastroCanal() {
-		
+	public void cadastroCanal(Canal canal) throws Exception {
+		new CanalDAO().cadastrarCanal(canal);
 	}
 }
