@@ -14,7 +14,7 @@ public class ConnectionMVC {
 			e.printStackTrace();
 		}
 	try {
-			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/MVC?useSSL=false", "root", "2412Lulu.");
+			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/MVC?useSSL=false", "root", "DAni2003#");
 		} catch(SQLException e) {
 			e.printStackTrace();
 		}
