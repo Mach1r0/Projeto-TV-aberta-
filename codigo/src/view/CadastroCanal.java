@@ -19,7 +19,7 @@ public class CadastroCanal extends JFrame implements ActionListener{
     
 
     public CadastroCanal() {
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
+    	setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         setSize(600, 300);
         setLayout(null);
         setLocationRelativeTo(null);

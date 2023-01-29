@@ -7,7 +7,7 @@ import model.Canal;
 
 public class CanalDAO {
     public void cadastrarCanal(Canal canal) throws Exception{
-    String sql = "Insert into canal (nome), values (?)";
+    String sql = "Insert into canal (nome) value (?)";
     PreparedStatement pStatement = null;
     Connection connection = null;
 
